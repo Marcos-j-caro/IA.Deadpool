@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Quiz do Deadpool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Seu Super-Herói</h1>
+        <p id="resultText"></p>
+        <img id="resultImage" src="" alt="Imagem do Super-Herói" class="hero-image">
+        <button onclick="refazerQuiz()">Refazer Quiz</button>
+    </div>
+
+    <script>
+        function refazerQuiz() {
+            window.location.href = "quiz.html";
+        }
+
+        window.onload = function() {
+            const resultText = document.getElementById('resultText');
+            const resultImage = document.getElementById('resultImage');
+
+            const superhero = localStorage.getItem('superhero');
+
+            if (superhero === 'Batman') {
+                resultText.textContent = "Você é como o Batman!";
+                resultImage.src = "batman.jpg";
+            } else if (superhero === 'Hulk') {
+                resultText.textContent = "Você é como o Hulk!";
+                resultImage.src = "hulk.jpg";
+            } else if (superhero === 'DoutorEstranho') {
+                resultText.textContent = "Você é como o Doutor Estranho!";
+                resultImage.src = "doutorestranho.jpg";
+            } else if (superhero === 'Deadpool') {
+                resultText.textContent = "Você é como o Deadpool!";
+                resultImage.src = "deadpool.jpg";
+            }
+        }
+    </script>
+</body>
+</html>
